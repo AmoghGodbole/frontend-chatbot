@@ -1,12 +1,18 @@
-import { Route, Switch, useLocation } from "react-router";
-import Sidebar from "./Sidebar";
-import Home from "./Pages/Home";
-import Team from "./Pages/Team";
-import Calender from "./Pages/Calender";
-import Documents from "./Pages/Documents";
-import Projects from "./Pages/Projects";
-import styled from "styled-components";
-import { AnimatePresence } from "framer-motion";
+import { Route, Switch, useLocation } from 'react-router';
+import Sidebar from './Sidebar';
+import Home from './Pages/Home';
+import Team from './Pages/Team';
+import Calender from './Pages/Calender';
+import Documents from './Pages/Documents';
+import Projects from './Pages/Projects';
+import styled from 'styled-components';
+import { AnimatePresence } from 'framer-motion';
+import ActionProvider from './components/ActionProvider';
+import MessageParser from './components/MessageParser';
+import config from './config';
+import Chatbot from 'react-chatbot-kit';
+import 'react-chatbot-kit/build/main.css';
+import './App.css';
 
 const Pages = styled.div`
   width: 100vw;
@@ -26,9 +32,14 @@ const Pages = styled.div`
 function App() {
   const location = useLocation();
   return (
-    <>
+    <div className="App">
       <Sidebar />
       <Pages>
+        <Chatbot
+          config={config}
+          actionProvider={ActionProvider}
+          messageParser={MessageParser}
+        />
         <AnimatePresence exitBeforeEnter>
           <Switch location={location} key={location.pathname}>
             <Route exact path="/" component={Home} />
@@ -39,7 +50,8 @@ function App() {
           </Switch>
         </AnimatePresence>
       </Pages>
-    </>
+      {/* </> */}
+    </div>
   );
 }
 

@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.react-chatbot-kit-chat-container{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin-right: 50px;
+  margin-bottom: 50px;
+}

@@ -2,6 +2,10 @@ import { useEffect, useState } from 'react';
 import MotionHoc from './MotionHoc';
 import Axios from 'axios';
 import { translate } from '@vitalets/google-translate-api';
+import Chatbot from 'react-chatbot-kit';
+import ActionProvider from '../components/ActionProvider';
+import MessageParser from '../components/MessageParser';
+import config from '../config';
 
 const HomeComponent = () => {
   const [text, setText] = useState('');
@@ -24,10 +28,12 @@ const HomeComponent = () => {
   // }, []);
 
   return (
-    <div style={{ padding: '100px' }}>
+    <div
+    // style={{ padding: '100px' }}
+    >
       <h1>Home</h1>
       {/* <h2>{text}</h2> */}
-      <div
+      {/* <div
         style={{
           position: 'fixed',
           right: 0,
@@ -37,11 +43,16 @@ const HomeComponent = () => {
           textAlign: 'center'
         }}
       >
-        <h2>Zom The Chatbot!</h2>
-        <form style={{ width: '100%' }}>
+        <h2>Zom The Chatbot!</h2> */}
+      {/* <form style={{ width: '100%' }}>
           <input type="text" />
-        </form>
-      </div>
+        </form> */}
+      {/* <Chatbot
+        config={config}
+        actionProvider={ActionProvider}
+        messageParser={MessageParser}
+      /> */}
+      {/* </div> */}
     </div>
   );
 };
