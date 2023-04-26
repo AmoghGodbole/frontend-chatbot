@@ -255,18 +255,18 @@ const Sidebar = () => {
           <Item
             onClick={() => setClick(false)}
             activeClassName="active"
-            to="/calender"
+            to="/crop-recommendation"
           >
-            <img src={Calender} alt="Calender" />
-            <Text clicked={click}>Calender</Text>
+            <img src={Calender} alt="Crop Recommendation" />
+            <Text clicked={click}>Recommend Crops</Text>
           </Item>
           <Item
             onClick={() => setClick(false)}
             activeClassName="active"
-            to="/documents"
+            to="/disease-prediction"
           >
-            <img src={Documents} alt="Documents" />
-            <Text clicked={click}>Documents</Text>
+            <img src={Documents} alt="Disease Prediction" />
+            <Text clicked={click}>Disease Prediction</Text>
           </Item>
           <Item
             onClick={() => setClick(false)}
